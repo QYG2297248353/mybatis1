@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 自动扫描 -->
+	<typeAliases>
+		<package name="com.ms.pojo" />
+	</typeAliases>
+	<!-- 驱动，数据库名称，编码方式，账号密码 -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url"
+					value="jdbc:mysql://localhost:3306/mybatis?characterEncoding=UTF-8" />
+				<property name="username" value="root" />
+				<property name="password" value="" />
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 映射实体类.xml -->
+	<mappers>
+		<mapper class="com.ms.mapper.CategoryMapper"/> 
+		<mapper class="com.ms.mapper.ProductMapper"/> 
+		<mapper class="com.ms.mapper.OrderItemMapper"/>
+        <mapper class="com.ms.mapper.OrderMapper"/>
+	</mappers>
+</configuration>
